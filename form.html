@@ -1,26 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Form</title>
+  <meta charset="utf-8">
+  <title>Contact form submission</title>
 </head>
 <body>
+  <form method="post" id="contact-form">
+    <h2>Contact us</h2>
+    <?php
+      $errorMessage = ''; // Define $errorMessage
+      echo(!empty($errorMessage) ? $errorMessage : '');
+    ?>
+    <p>
+      <label>First Name:</label>
+      <input name="name" type="text"/>
+    </p>
+    <p>
+      <label>Email Address:</label>
+      <input style="cursor: pointer;" name="email" type="text"/>
+    </p>
+    <p>
+      <label>Message:</label>
+      <textarea name="message"></textarea>
+    </p>
+    <p>
+      <input type="submit" value="Send"/>
+    </p>
+  </form>
 
-<form action="send_email.php" method="post">
-  <label for="firstName">First Name:</label>
-  <input type="text" id="firstName" name="firstName" required>
-  <br>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+  <script>
+    const constraints = {
+      name: {
+        presence: { allowEmpty: false }
+      },
+      email: {
+        presence: { allowEmpty: false },
+        email: true
+      },
+      message: {
+        presence: { allowEmpty: false }
+      }
+    };
 
-  <label for="email">Email Address:</label>
-  <input type="email" id="email" name="email" required>
-  <br>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(event) {
+      const formValues = {
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        message: form.elements.message.value
+      };
 
-  <label for="message">Message:</label>
-  <textarea id="message" name="message" required></textarea>
-  <br>
+      const errors = validate(formValues, constraints);
+      if (errors) {
+        event.preventDefault();
+        const errorMessage = Object.values(errors)
+          .map(function(fieldValues) {
+            return fieldValues.join(', ');
+          })
+          .join("\n");
 
-  <input type="submit" value="Send">
-</form>
-
+        alert(errorMessage);
+      }
+    }, false);
+  </script>
 </body>
 </html>
