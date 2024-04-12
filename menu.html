@@ -18,13 +18,13 @@
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 0px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+th, td {
+  background-color: #FFFFFF;
 }
 h1 {
   text-align: center;
@@ -37,9 +37,12 @@ h2 {
 h3 {
   text-align: left;
 }
-        h4 {
-        text-align: center;
-        }
+h4 {
+text-align: center;
+}
+tr:nth-child(even) {
+background-color: #FFFFFF;
+}
 </style>
 </head>
 <body>
@@ -48,7 +51,7 @@ h3 {
 <h4>More Information at the bottom of the page</h4>
 <button class="center" onclick="document.location='https://foxtrotechogamma.github.io/DMC-Web/index.html'" title="Click to go back to the home page">Home</button>
 <br>
-<table>
+<table style="width:100%">
     <tr>
         <th><strong>Starters</strong> (All served with roll and butter)</th>
         <th><strong>Mains</strong></th>
@@ -107,17 +110,17 @@ h3 {
     <tr>
         <td>Bruschetta with tomato and mozzarella</td>
         <td>Roast beef with horseradish and Yorkshire pudding</td>
-        <td></td>
+        <td><strong>Cheese Board</strong> wih Tea/Coffee</td>
     </tr>
     <tr>
         <td>Buffalo chicken wings</td>
         <td>Roast pork with apple sauce and crackling</td>
-        <td><strong>Cheese Board</strong> wih Tea/Coffee</td>
+        <td>Selection of 3 cheeses and grapes, with crackers &butter</td>
     </tr>
     <tr>
         <td>Greek salad with olives and feta</td>
         <td>Sausages with onion gravy</td>
-        <td>Selection of 3 cheeses and grapes, with crackers &butter</td>
+        <td rowspan="6"><img src="logo.jpg" width="350" height="350"></td>
     </tr>
     <tr>
         <td>Houmous and pitta bread with cucumber</td>
@@ -136,31 +139,21 @@ h3 {
     </tr>
     <tr>
         <td>Smoked mackerel salad</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Fillet of salmon with tartare sauce (£2 extra per person)</td>
-        <td></td>
+        <td>Fillet of salmon with tartare sauce (£2 extra per person)   </td>
     </tr>
     <tr>
         <td></td>
         <td>Lamb shank ( £2 extra per person)</td>
-        <td></td>
     </tr>
     <tr>
-        <td>.</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td></td>
         <td><em><strong>Vegetarian options available if ordered in advance</strong></em></td>
-        <td></td>
     </tr>
     <tr>
-        <td>.</td>
         <td></td>
         <td></td>
     </tr>
@@ -201,7 +194,7 @@ h3 {
     </tr>
     <tr>
         <td></td>
-        <td>Seasonal vegetables available throughout the year</td>
+        <td><strong>Seasonal vegetables available throughout the year</strong></td>
         <td></td>
     </tr>
 </table>
