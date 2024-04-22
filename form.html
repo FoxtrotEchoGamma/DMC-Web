@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->addAddress($toEmail);
             $mail->Subject = $emailSubject;
             $mail->isHTML( isHtml: true);
-            $mail->Body = "<p>Name: {$name]</p><p>Email: {$email]</p><p>Message: {$message]</p>;
+            $mail->Body = "<p>Name: {$name]</p><p>Email: {$email]</p><p>Message: {$message]</p>
 
             // Send the message
             $mail->send () ;
